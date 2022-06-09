@@ -4,6 +4,6 @@ from products.views import product
 
 urlpatterns = [
 
-    path('products/', product, name="template")
+    path('create-products/', product, name="template")
 
 ]

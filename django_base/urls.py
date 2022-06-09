@@ -17,16 +17,11 @@ from itertools import product
 from django.contrib import admin
 from django.urls import path, include
 from products.views import product
-# from mifamilia.views import familia
-# from django.urls import path
+from django_base.views import index
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('familia/', familia, name ="template")
-# ]
 
 urlpatterns = [
-    # path('', index, name = 'index'),
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
     path('products/', include('products.urls')),
 
