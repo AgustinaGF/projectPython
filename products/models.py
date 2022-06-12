@@ -9,6 +9,7 @@ class Products(models.Model):
     type = models.CharField(max_length=40, default="CD")
     price = models.FloatField()
     description = models.CharField(max_length=200, blank=True, null=True)
+    SKU = models.CharField(max_length=30, unique=True)
     in_stock = models.BooleanField(default=True)
 
     class Meta:

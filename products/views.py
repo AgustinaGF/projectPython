@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from pydoc import describe
 from unicodedata import name
 from django.shortcuts import render
@@ -10,8 +11,8 @@ from django.http import HttpResponse
 
 
 def product(request):
-    producto = Products.objects.all()
-    context = {'producto': producto}
+    product = Products.objects.all()
+    context = {'product': product}
     return render(request, 'card_product.html', context=context)
 
 def create_products(request):
@@ -30,4 +31,10 @@ def create_products(request):
                 in_stock = form.cleaned_data["in_stock"],
             )
             context={"new_product":new_product}
-        return HttpResponse (request, 'create_product.html', context=context)
+        return render (request, 'create_product.html', context=context)
+
+def search_product_view(request):
+    print(request.GET)
+    products = Products.objects.filter(name__icontains=request.GET['Search'])
+    context= {'products':products}
+    return render (request, 'search_product.html', context=context)
