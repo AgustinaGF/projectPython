@@ -19,7 +19,7 @@
    
 ## 🎉Listo ya puede probar el proyecto🎉
 
-### Pasos para probar el proyecto###
+### Pasos para probar el proyecto
 
 ### 1 - Crear productos desde la seccion Create Product del NavBar
 
