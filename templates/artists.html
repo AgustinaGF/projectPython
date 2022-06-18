@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block artist %}
+<div>
+    {% for artist in artist %}
+    <ul class="list-group">
+        <li class="list-group-item">{{artist.fullname}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -3,12 +3,21 @@ from multiprocessing import context
 from pydoc import describe
 from unicodedata import name
 from django.shortcuts import render
-from products.models import Products
+from products.models import Products,Musical_genre,Artist
 from products.forms import Product_form
 from django.http import HttpResponse
 
 # Create your views here.
 
+def artists(request):
+    artist = Artist.objects.all()
+    context = {'artist': artist}
+    return render(request, 'artists.html', context=context)
+
+def genre (request):
+    genre = Musical_genre.objects.all()
+    context ={'genre': genre}
+    return render(request, 'genre.html', context=context)
 
 def product(request):
     product = Products.objects.all()

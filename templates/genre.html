@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block genre %}
+<div>
+    {% for genre in genre %}
+    <ul class="list-group">
+        <li class="list-group-item">{{genre.genre}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
