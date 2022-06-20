@@ -43,7 +43,7 @@ def delete_product(request, pk):
             product_delete= Products.objects.get(id=pk)
             product_delete.delete()
             context ={'message':'The product was successfully removed'}
-        return render(request, 'card_product.html', context=context )
+        return render(request, 'delete_product.html', context=context )
     except:
         context = {'error': 'The product does not exist'}
         return render(request, 'delete_product.html', context=context)

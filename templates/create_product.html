@@ -1,6 +1,9 @@
-{% extends 'base.html' %} {% block create-products %}
+{% extends 'base.html' %} 
+{% block create-products %}
 <h1>Crear productos</h1>
-{% endblock %} {% block form-products %} {%if form%}
+{% endblock %}
+{% block form-products %}
+{%if form%}
 <form action="" method="POST">
     {% csrf_token%}
     <table>
@@ -17,4 +20,5 @@
         <p class="card-text">Precio: {{new_product.price}}</p>
     </div>
 </div>
-{%endif%} {% endblock %}
+{%endif%} 
+{% endblock %}
