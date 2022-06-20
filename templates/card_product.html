@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block list-products %}
-<h1>Productos</h1>
+<h1>Products</h1>
+{{message}}
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for product in product %}
     <div class="card" style="width: 18rem;">
@@ -7,8 +8,8 @@
         <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description}}</p>
-            <p class="card-text">{{product.price}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">{{product.id}}</p>
+            <a href="/products/detail-products/{{product.id}}/" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
     {% endfor %}

@@ -1,4 +1,5 @@
 
+from genericpath import exists
 from multiprocessing import context
 from pydoc import describe
 from unicodedata import name
@@ -24,6 +25,29 @@ def product(request):
     context = {'product': product}
     return render(request, 'card_product.html', context=context)
 
+def detail_products(request, pk):
+    try:
+        prod = Products.objects.get(id=pk)
+        context = {'prod':prod}
+        return render(request, 'product_detail.html', context=context)
+    except:
+        context = {'error': 'The product does not exist'}
+        return render(request, 'card_product.html', context=context)
+
+def delete_product(request, pk):
+    try:
+        if request.method == 'GET':
+            product_delete = Products.objects.get(id=pk)
+            context = {'productDelete':product_delete}
+        else:
+            product_delete= Products.objects.get(id=pk)
+            product_delete.delete()
+            context ={'message':'The product was successfully removed'}
+        return render(request, 'card_product.html', context=context )
+    except:
+        context = {'error': 'The product does not exist'}
+        return render(request, 'delete_product.html', context=context)
+
 def create_products(request):
     if request.method == "GET":
         form = Product_form()
@@ -37,6 +61,7 @@ def create_products(request):
                 type = form.cleaned_data["type"],
                 price = form.cleaned_data["price"],
                 description = form.cleaned_data["description"],
+                SKU = form.cleaned_data['SKU'],
                 in_stock = form.cleaned_data["in_stock"],
             )
             context={"new_product":new_product}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block hometitle%} Delete Product {% endblock%} {% block form-products %} {% if productDelete%}
+<h3 style="color:red">Are you about to delete {{productDelete.name}}, are you sure?</h3>
+<form class="d-flex" action="/products/delete-product/{{productDelete.id}}/" method="POST">
+    {% csrf_token%}
+    <button class="btn btn-danger" type="submit">
+    DELETE
+  </button>
+</form>
+{% else%} {{message}} {% endif %} {% endblock%}
