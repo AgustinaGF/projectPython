@@ -16,7 +16,6 @@ Including another URLconf
 from itertools import product
 from django.contrib import admin
 from django.urls import path, include
-from products.views import product
 from django_base.views import index
 
 

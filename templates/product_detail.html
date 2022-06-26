@@ -6,11 +6,11 @@
     <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{prod.name}}</h5>
-            <p class="card-text">{{prod.description}}</p>
-            <p class="card-text">{{prod.price}}</p>
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="/products/delete-product/{{prod.id}}/" class="btn btn-danger">Delete</a>
+            <h5 class="card-title">{{object.name}}</h5>
+            <p class="card-text">{{object.description}}</p>
+            <p class="card-text">{{object.price}}</p>
+            <a href="/products/update-product/{{object.id}}" class="btn btn-primary">Edit</a>
+            <a href="/products/delete-product/{{object.id}}/" class="btn btn-danger">Delete</a>
         </div>
     </div>
 
