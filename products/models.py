@@ -1,4 +1,3 @@
-from unicodedata import name
 from django.db import models
 
 # Create your models here.
@@ -12,11 +11,14 @@ class Products(models.Model):
     SKU = models.CharField(max_length=30, unique=True)
     in_stock = models.BooleanField(default=True)
     genre = models.ForeignKey('Musical_genre', on_delete=models.CASCADE, related_name='products')
+    image = models.ImageField(upload_to = 'products', blank=True, null=True)
 
     class Meta:
         verbose_name = 'product'
         verbose_name_plural = 'products'
 
+    def __str__(self):
+        return self.name
 
 class Musical_genre(models.Model):
     genre = models.CharField(max_length=50)

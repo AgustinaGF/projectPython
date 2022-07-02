@@ -4,7 +4,7 @@ from products.views import List_product,Detail_product,Create_products,Delete_pr
 
 urlpatterns = [
     path('artist/',artists, name="artist"),
-     path('genre/', genre, name="genre"),
+    path('genre/', genre, name="genre"),
     path('products/', List_product.as_view(), name="list_products"),
     path('detail-products/<int:pk>/', Detail_product.as_view(), name="detail_products"),
     path('create-products/', Create_products.as_view(), name="create-products"),
