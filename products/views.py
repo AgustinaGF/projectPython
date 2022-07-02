@@ -1,15 +1,9 @@
-
-from genericpath import exists
-from multiprocessing import context
-from pydoc import describe
-from pyexpat import model
-from re import template
-from unicodedata import name
 from django.shortcuts import render
 from django.urls import reverse
 from products.models import Products,Musical_genre,Artist
 from products.forms import Product_form
 from django.http import HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import ListView, DetailView,CreateView, DeleteView, UpdateView
 # Create your views here.
@@ -23,7 +17,7 @@ class Detail_product(DetailView):
     model = Products
     template_name= 'product_detail.html'
 
-class Create_products(CreateView):
+class Create_products(LoginRequiredMixin,CreateView):
     model = Products
     template_name = 'create_product.html'
     fields = '__all__'
