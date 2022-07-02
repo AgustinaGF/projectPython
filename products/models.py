@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
@@ -34,8 +35,9 @@ class Artist(models.Model):
     fullname = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = 'artista'
-        verbose_name_plural = 'artistas'
+        verbose_name = 'artist'
+        verbose_name_plural = 'artists'
 
     def __str__(self):
         return self.fullname
+

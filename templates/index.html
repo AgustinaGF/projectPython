@@ -1,5 +1,12 @@
 {% extends 'base.html' %} 
+{% load static %}
+
 {% block hometitle%}
 El contenido de home
+
+
+<img src="{ % static 'image/cover.jpg' % }" class="card-img-top">
+
+
 <h3>{{message}}</h3>
 {% endblock%}

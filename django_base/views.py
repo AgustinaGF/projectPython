@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 from django_base.forms import User_registration_form
 
+
 def login_view(request):
     if request.method == 'POST':
         form= AuthenticationForm(request, data = request.POST)
@@ -64,8 +65,7 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
-
-
+    
 def index(request):
     print(request.user)
     print(request.user.user_profile)
