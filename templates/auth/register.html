@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block hometitle %}
+Register
+{% endblock %}
+
+{% block form-products %}
+<h3>{{errors}}</h3>
+<h2 style="margin-left:30rem"> Complete the data to Register</h2>
+<form action="" method="POST">
+    {% csrf_token%}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Login">
+</form>
+
+{% endblock %}
