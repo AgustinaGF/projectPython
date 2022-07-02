@@ -11,6 +11,7 @@ class Products(models.Model):
     description = models.CharField(max_length=200, blank=True, null=True)
     SKU = models.CharField(max_length=30, unique=True)
     in_stock = models.BooleanField(default=True)
+    genre = models.ForeignKey('Musical_genre', on_delete=models.CASCADE, related_name='products')
 
     class Meta:
         verbose_name = 'product'
@@ -24,6 +25,8 @@ class Musical_genre(models.Model):
         verbose_name = 'genre musical'
         verbose_name_plural = 'generes musicales'
 
+    def __str__(self):
+        return self.genre
 
 class Artist(models.Model):
     fullname = models.CharField(max_length=50)
@@ -31,3 +34,6 @@ class Artist(models.Model):
     class Meta:
         verbose_name = 'artista'
         verbose_name_plural = 'artistas'
+
+    def __str__(self):
+        return self.fullname

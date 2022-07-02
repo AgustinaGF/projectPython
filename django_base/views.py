@@ -68,5 +68,6 @@ def logout_view(request):
 
 def index(request):
     print(request.user)
+    print(request.user.user_profile)
     print (request.user.is_authenticated)
     return render(request, 'index.html')
