@@ -56,3 +56,7 @@ def search_product_view(request):
     products = Products.objects.filter(name__icontains=request.GET['Search'])
     context= {'products':products}
     return render (request, 'search_product.html', context=context)
+
+def about_me(request):
+    return render (request,'about_me.html')
+
