@@ -1,12 +1,16 @@
 {% extends 'base.html' %} 
+
+
+{% block contain%}
+
 {% load static %}
-
-{% block hometitle%}
-El contenido de home
-
-
-<img src="{ % static 'image/cover.jpg' % }" class="card-img-top">
-
-
+<div class="card bg-dark">
+  <img src="{% static 'image/cover.jpg' %}" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h1 class="text-center" style="color:   #ce7840    ; margin-bottom: 2em; margin-top: 2em;">Music Shop</h1>
+    <p class="h3 text-center" style="color: #876a9a  ">Find the best records in our record store</p>
+    <p class="h3 text-center" style="color: #876a9a  ">View our collections</p>
+  </div>
+</div>
 <h3>{{message}}</h3>
 {% endblock%}
