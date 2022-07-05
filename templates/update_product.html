@@ -1,11 +1,9 @@
 {% extends 'base.html' %} 
-{% block hometitle %}
-Update Products
-{% endblock %}
 {% block contain %}
 
 {%if form%}
-<h2 style="margin-left:30rem">Complete the data to update </h2>
+<h2 style="margin-top:2em;color:#595656;" class="text-center">Complete the data to update </h2>
+<div class="d-flex justify-content-center" style="margin-top:5em">
 <form action="" method="POST" enctype="multipart/form-data" >
     {% csrf_token%}
     <table>
@@ -13,6 +11,7 @@ Update Products
     </table>
     <input type="submit" value="Send">
 </form>
+</div>
 {%endif%} 
 
 {% endblock %}

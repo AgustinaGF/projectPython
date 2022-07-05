@@ -1,12 +1,9 @@
 {% extends 'base.html' %} 
 
-{% block hometitle %}
-Login
-{% endblock %}
-
 {% block contain %}
 <h3>{{errors}}</h3>
-<h2 style="margin-left:30rem"> Complete the data to start session </h2>
+<h2  class="text-center" style="margin-top:2em; color:#595656 ;"> Complete the data to start session </h2>
+<div class="d-flex justify-content-center" style="margin-top:5em ;">
 <form action="" method="POST">
     {% csrf_token%}
     <table>
@@ -14,5 +11,5 @@ Login
     </table>
     <input type="submit" value="Login">
 </form>
-
+</div>
 {% endblock %}

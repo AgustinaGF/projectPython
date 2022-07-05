@@ -1,11 +1,11 @@
 {% extends 'base.html' %} 
 {% block hometitle %} 
-Delete Product 
+<h1 class="text-center"style="margin-top:2em; color:#595656;">Delete Product </h1>
 {% endblock %}
 {% block contain %}
 
-<h3 style="color:red">Are you about to delete {{object.name}}, are you sure?</h3>
-<form class="d-flex" method="POST">
+<h3 class="text-center"style="color:red;margin-top:2em;">Are you about to delete {{object.name}}, are you sure?</h3>
+<form class="d-flex justify-content-center" method="POST">
     {% csrf_token%}
     <button class="btn btn-danger" type="submit">
     DELETE

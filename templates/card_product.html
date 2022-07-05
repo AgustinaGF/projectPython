@@ -1,17 +1,18 @@
 {% extends 'base.html' %} 
 {% block contain %}
-<h1>Products</h1>
+<h1  style="margin-top:2em;color:#595656;" class="text-center">Products</h1>
 {{message}}
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+<div class="d-flex justify-content-center" style="margin-top:5rem;">
     {% for product in object_list %}
     <div class="card" style="width: 18rem; margin-left: 2em;">
         {% if product.image %}
         <img src="{{product.image.url}}" style="height:18em ;";class="card-img-top">
         {% endif %}
-        <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.description}}</p>
-            <p class="card-text">{{product}}</p>
+        <div style=" background-color: #93b1ad"class="card-body">
+            <h5 style=" color:#595656;"class="card-title">{{product.name}}</h5>
+            <p style=" color:#595656;"" 
+            class="card-text">{{product.description}}</p>
+            <p style=" color:#595656;" class="card-text">{{product}}</p>
             <a href="/products/detail-products/{{product.id}}/" class="btn btn-primary">Detail</a>
         </div>
     </div>
