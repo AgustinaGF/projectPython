@@ -1,18 +1,15 @@
 {% extends 'base.html' %} 
 
-{% block hometitle %}
-Register
-{% endblock %}
-
 {% block contain %}
 <h3>{{errors}}</h3>
-<h2 style="margin-left:30rem"> Complete the data to Register</h2>
+{%if form%}
+<h2 style="margin-left:30rem"> Complete the data to update</h2>
 <form action="" method="POST"  enctype="multipart/form-data">
     {% csrf_token%}
     <table>
         {{form.as_table}}
     </table>
-    <input type="submit" value="Login">
+    <input type="submit" value="Send">
 </form>
-
+{%endif%} 
 {% endblock %}

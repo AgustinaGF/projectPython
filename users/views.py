@@ -1,11 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from users.models import User_profile
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django_base.forms import User_registration_form
+from users.forms import User_registration_form
+from django.views.generic import ListView, DetailView,CreateView, DeleteView, UpdateView
 
 
 def login_view(request):
@@ -65,4 +68,16 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
-    
+
+
+class User_info(LoginRequiredMixin,DetailView):
+    model = User_profile
+    template_name = 'auth/user.html'
+
+class Update_user(LoginRequiredMixin,UpdateView):
+    model = User_profile
+    template_name = 'auth/user_update.html'
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('user', kwargs={'pk':self.object.pk})

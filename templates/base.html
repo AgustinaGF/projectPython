@@ -34,15 +34,11 @@
                         <a class="nav-link" href="/products/create-products/">Create Products</a>
 										</li>
 										{% if request.user.is_authenticated %}
-										<li class="nav-item" style="margin-right:5rem;">
-											<h5>{{request.user.username}} </h5>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="/users/detail-user-profile/{{request.user.user_profile.pk}}">
+										<li class="nav-item" style="margin-right:2rem;">
+											<a class="nav-link" href="/accounts/profile/{{request.user.user_profile.pk}}">Profile
 											<img src="{{request.user.user_profile.image.url}}" style="height:2em;">
 										</a>
 										</li>
-
 										<li class="nav-item">
 											<a class="nav-link" href="/accounts/logout/">Logout</a>
 										</li>
@@ -51,8 +47,9 @@
 										<a class="nav-link" href="/accounts/login/">Login</a>
 										</li>
 										<li class="nav-item">
-									<a class="nav-link" href="/accounts/signup/">Register</a>
+										<a class="nav-link" href="/accounts/signup/">Register</a>
 										</li>
+										
 										{% endif %}
 
 						<li class="nav-item dropdown">
@@ -97,21 +94,10 @@
 				</div>
 			</div>
 		</nav>
-		{% block hometitle%}
+		{% block hometitle %}
+		{% endblock %}
+		{% block contain%}
 		{% endblock%} 
-		{% block subtitle%} 
-		{% endblock%} 
-		{% block artist %}
-		{% endblock%}
-		{% block genre %}
-		{% endblock%}
-		{% block list-products %}
-		{% endblock%}
-		{%block create-products %} 
-		{% endblock%}
-		{% block form-products %}
-		{% endblock%}
-		
 	</body>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

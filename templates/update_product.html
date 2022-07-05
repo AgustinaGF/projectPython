@@ -2,16 +2,16 @@
 {% block hometitle %}
 Update Products
 {% endblock %}
-{% block form-products %}
+{% block contain %}
 
 {%if form%}
 <h2 style="margin-left:30rem">Complete the data to update </h2>
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data" >
     {% csrf_token%}
     <table>
         {{form.as_table}}
     </table>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Send">
 </form>
 {%endif%} 
 
