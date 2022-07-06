@@ -18,10 +18,8 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            print(username)
-            print(password)
             user = authenticate(username=username, password=password)
-            print(user)
+            
 
             if user is not None:
                 login(request, user)

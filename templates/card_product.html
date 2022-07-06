@@ -2,7 +2,7 @@
 {% block contain %}
 <h1  style="margin-top:2em;color:#595656;" class="text-center">Products</h1>
 {{message}}
-<div class="d-flex justify-content-center" style="margin-top:5rem;">
+<div class="d-flex justify-content-center" style="margin-top:5rem; padding-bottom: 5rem;">
     {% for product in object_list %}
     <div class="card" style="width: 18rem; margin-left: 2em;">
         {% if product.image %}
